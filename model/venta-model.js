@@ -1,17 +1,26 @@
 const {Schema, model}= require('mongoose');
-const ProductoSchema = Schema({
-    name:{
+const ProductosVendidosSchema = Schema({
+    nombreComprador:{
         type:String,
         require:true,
 
     },
-    precio:{
-        type:Number,
-        require:true,
-    },
-    descripcion:{
+    vendedor:{
         type:String,
         require:true,
     },
+    ProductoNombre:{
+        type:String,
+        require:true,
+    },
+    producto:{
+        type: Schema.Types.ObjetId,
+        ref: 'Productos',
+        require:true,   
+    },
+    fechaVenta : {
+        type: Date,
+        default: Date.now
+    },
 });
-module.export = model('Productos', ProductoSchema);
+module.export = model('ProductosVendidos', ProductosVendidosSchema);
