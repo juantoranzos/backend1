@@ -7,8 +7,8 @@ const {
 } = require('../controllers/adminControllers');
 const routerAdmin = express.Router();
 
-routerAdmin.post('/crear-producto', crearProducto);
+routerAdmin.post('/crearProducto', crearProducto);
 routerAdmin.get('/productos', listaProductos);
-routerAdmin.post('/crear-venta', crearVenta);
+routerAdmin.post('/crearVenta', crearVenta);
 routerAdmin.get('/ventas', listaVentas);
 module.exports = routerAdmin;
